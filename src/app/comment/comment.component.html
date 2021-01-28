@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: lightblue;">
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <a style="font-size: 30px;"><strong>Codify Test</strong></a>
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <a class="nav-link" [routerLink]="['/home']">Home</a>&nbsp;
+          <a class="nav-link" [routerLink]="['/friend']">Friends</a>&nbsp;
+      </ul>
+    </div>
+</nav>
+
+
+<div class="container w-lg-25" style="margin-top:5%;margin-bottom:5%;">
+    <h2>Comments</h2>
+    <ul class="list-group" *ngFor="let comment of comments.data">
+        <li class="list-group-item" style="background-color: lightblue;">
+            <img src={{comment.owner.picture}} style="width: 10%;" class="rounded-circle">
+    <a [routerLink]="['/user-detail'+'/'+comment.owner.id]"> {{comment.owner.firstName}}
+        {{comment.owner.lastName}}</a> - <Strong> {{comment.message}}</Strong>
+        </li>
+    </ul>
+    <button class="btn primary-btn" [routerLink]="['/home']" >Back</button>
+
+</div>
+
